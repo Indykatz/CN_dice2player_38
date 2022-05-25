@@ -105,9 +105,9 @@ const p1logScore = () => {
   p1gameScore += p1diceRoll;
   p1score.textContent = p1gameScore;
   if (p1gameScore > 21) {
-    player1.textContent = `GAME LOST YOU SCORED ${p1ameScore}`;
+    player1.textContent = `GAME LOST YOU SCORED ${p1gameScore}`;
   } else {
-    if (gameScore == 21) {
+    if (p1gameScore == 21) {
       player1.textContent = `GAME WON YOU SCORED ${p1gameScore}`;
     }
   }
