@@ -21,44 +21,70 @@
         </div>
       </div>
       <!--  content -->
-      <div class="content" id="textArea">Dice Game - Score 21 to win</div>
+      <div class="content" id="textArea_1">Score 21 to win! Roll a 1 and game is over!
+        Press New Game to start. 
+        Click center of dice to roll.
+      </div>
+      <div class="content" id="textArea_2">-</div>
       <!-- white part -->
       <div class="content">
-        <ul>
-          <li id="startgame">Start New Game</li>
-        </ul>
-        <ul>
-          <li id="player1">Player 1 Roll</li>
-          <li id="player2">Player 2 Roll</li>
-        </ul>
+        <!-- dice -->
+        <div class="diceContent">
+          <!-- p1 dice -->
+          <div class="p1_dice" id="p1">
+            <div class="column">
+              <span class="p1_dot" id="p1_d1"></span>
+              <span class="p1_dot" id="p1_d2"></span>
+              <span class="p1_dot" id="p1_d3"></span>
+            </div>
+            <div class="column">
+              <span class="p1_dot"></span>
+              <span class="p1_dot" id="p1_d5"></span>
+              <span class="p1_dot"></span>
+            </div>
+            <div class="column">
+              <span class="p1_dot" id="p1_d7"></span>
+              <span class="p1_dot" id="p1_d8"></span>
+              <span class="p1_dot" id="p1_d9"></span>
+            </div>
+          </div>
+          <!-- p2 dice -->
+          <div class="p2_dice" id="p2">
+            <div class="column">
+              <span class="p2_dot" id="p2_d1"></span>
+              <span class="p2_dot" id="p2_d2"></span>
+              <span class="p2_dot" id="p2_d3"></span>
+            </div>
+            <div class="column">
+              <span class="p2_dot"></span>
+              <span class="p2_dot" id="p2_d5"></span>
+              <span class="p2_dot"></span>
+            </div>
+            <div class="column">
+              <span class="p2_dot" id="p2_d7"></span>
+              <span class="p2_dot" id="p2_d8"></span>
+              <span class="p2_dot" id="p2_d9"></span>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="content" id="p1">
           <ul>
-            <li>
-              Player 1 Roll Count
-              <p id="p1count">-</p>
-            </li>
-            <li>
-              Player 1 Dice Roll
-              <p id="p1roll">-</p>
-            </li>
             <li>
               Player 1 Score
-              <p id="p1score">-</p>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              Player 2 Roll Count
-              <p id="p2count">-</p>
-            </li>
-            <li>
-              Player 2 Dice Roll
-              <p id="p2roll">-</p>
-            </li>
-            <li>
+              <p id="p1_score">-</p>
               Player 2 Score
-              <p id="p2score">-</p>
+              <p id="p2_score">-</p>
+            </li>
+            <li id="restart">New Game</li>
+            <li>
+              Player 1 Count
+              <p id="p1_count">-</p>
+              Player 2 Count
+              <p id="p2_count">-</p>
             </li>
           </ul>
+        </div>
       </div>
       <!-- <footer> -->
       <div class="foot">
@@ -82,6 +108,7 @@
           </ul>
         </nav>
       </div>
+    </div>
       <!-- JS script -->
       <script src="app.js"></script>
       <!-- </footer> -->

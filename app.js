@@ -1,17 +1,20 @@
 // Dice game JS
 
-const startgame = document.getElementById("startgame");
+const textArea_1 = document.getElementById("textArea_1");
+const textArea_2 = document.getElementById("textArea_2");
 
-const player1 = document.getElementById("player1");
-const player2 = document.getElementById("player2");
+const restart = document.getElementById("restart");
+
+// const player1 = document.getElementById("player1");
+// const player2 = document.getElementById("player2");
 
 // const rolldice = document.getElementById("rolldice");
-const p1count = document.getElementById("p1count");
-const p1roll = document.getElementById("p1roll");
-const p1score = document.getElementById("p1score");
-const p2count = document.getElementById("p2count");
-const p2roll = document.getElementById("p2roll");
-const p2score = document.getElementById("p2score");
+const p1count = document.getElementById("p1_count");
+// const p1roll = document.getElementById("p1_roll");
+const p1score = document.getElementById("p1_score");
+const p2count = document.getElementById("p2_count");
+// const p2roll = document.getElementById("p2_roll");
+const p2score = document.getElementById("p2_score");
 
 // game var
 let p1gameCount = 0;
@@ -22,11 +25,29 @@ let p2gameCount = 0;
 let p2gameScore = 0;
 let p2diceRoll = 0;
 
+// player 1 dots
+// dice dot elements
+const p1_d1 = document.getElementById("p1_d1");
+const p1_d2 = document.getElementById("p1_d2");
+const p1_d3 = document.getElementById("p1_d3");
+const p1_d5 = document.getElementById("p1_d5");
+const p1_d7 = document.getElementById("p1_d7");
+const p1_d8 = document.getElementById("p1_d8");
+const p1_d9 = document.getElementById("p1_d9");
+
+// player 2 dots
+// dice dot elements
+const p2_d1 = document.getElementById("p2_d1");
+const p2_d2 = document.getElementById("p2_d2");
+const p2_d3 = document.getElementById("p2_d3");
+const p2_d5 = document.getElementById("p2_d5");
+const p2_d7 = document.getElementById("p2_d7");
+const p2_d8 = document.getElementById("p2_d8");
+const p2_d9 = document.getElementById("p2_d9");
+
 // event listener for new game
-startgame.addEventListener("click", () => {
-  startgame.textContent = "Restart Game";
-  player1.textContent = "Player 1 Roll";
-  player2.textContent = "Player 2 Roll";
+restart.addEventListener("click", () => {
+  textArea_2.textContent = "Let's Play";
   newGameFunc();
 });
 
@@ -34,25 +55,22 @@ startgame.addEventListener("click", () => {
 const newGameFunc = () => {
   p1gameCount = 0;
   p1gameScore = 0;
-  p1diceRoll = 0;
   p2gameCount = 0;
   p2gameScore = 0;
-  p2diceRoll = 0;
   p1count.textContent = p1gameCount;
-  p1roll.textContent = p1gameScore;
-  p1score.textContent = p1diceRoll;
+  p1score.textContent = p1gameScore;
   p2count.textContent = p2gameCount;
-  p2roll.textContent = p2gameScore;
-  p2score.textContent = p2diceRoll;
+  p2score.textContent = p2gameScore;
+  textArea_2.textContent = `${p1gameScore} : ${p2gameScore}`;
 };
 
-player1.addEventListener("click", () => {
+p1_d5.addEventListener("click", () => {
   if (p1gameScore < 21 && p1diceRoll != 1 && p1count.textContent != `-`) {
     p1rollDiceFunc();
   }
 });
 
-player2.addEventListener("click", () => {
+p2_d5.addEventListener("click", () => {
   if (p2gameScore < 21 && p2diceRoll != 1 && p2count.textContent != `-`) {
     p2rollDiceFunc();
   }
@@ -101,7 +119,7 @@ const p2oneRolled = () => {
 const p1logScore = () => {
   p1gameCount += 1;
   p1count.textContent = p1gameCount;
-  p1roll.textContent = p1diceRoll;
+  // p1roll.textContent = p1diceRoll;
   p1gameScore += p1diceRoll;
   p1score.textContent = p1gameScore;
   if (p1gameScore > 21) {
@@ -117,7 +135,7 @@ const p1logScore = () => {
 const p2logScore = () => {
   p2gameCount += 1;
   p2count.textContent = p2gameCount;
-  p2roll.textContent = p2diceRoll;
+  // p2roll.textContent = p2diceRoll;
   p2gameScore += p2diceRoll;
   p2score.textContent = p2gameScore;
   if (p2gameScore > 21) {

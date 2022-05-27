@@ -120,7 +120,8 @@ h4 {
   display: flex;
 }
 
-#textArea {
+#textArea_1,
+#textArea_2 {
   background-color: #2a5a97;
   color: #fff;
   font-size: 18px;
@@ -180,4 +181,80 @@ h4 {
   .foot {
     position: relative;
   }
+}
+
+/* ------ */
+/* dice   */
+/* ----- */
+
+.diceContent {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  padding: 10px;
+  justify-content: space-evenly;
+  flex-grow: 1;
+}
+
+/* player 1 dice */
+
+.p1_dice {
+  padding: 4px;
+  background-color: #2a5a97;
+  width: 104px;
+  height: 104px;
+  border-radius: 10%;
+  margin: 10px auto;
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+.p1_dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #2a5a97;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+#p1_d5 {
+  background-color: #fff;
+}
+
+/* player 1 dice */
+.p2_dice {
+  padding: 4px;
+  background-color: #f49446;
+  width: 104px;
+  height: 104px;
+  border-radius: 10%;
+  margin: 10px auto;
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+.p2_dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #f49446;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+#p2_d5 {
+  background-color: #fff;
 }
