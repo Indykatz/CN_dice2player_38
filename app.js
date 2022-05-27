@@ -42,8 +42,8 @@ const p2_d9 = document.getElementById("p2_d9");
 restart.addEventListener("click", () => {
   p1_resetDice();
   p2_resetDice();
-  p1_d5.style.backgroundColor = "#fff";
-  p2_d5.style.backgroundColor = "#fff";
+  // p1_d5.style.backgroundColor = "#fff";
+  // p2_d5.style.backgroundColor = "#fff";
   newGameFunc();
 });
 
