@@ -1,19 +1,12 @@
 // Dice game JS
 
 const textArea_1 = document.getElementById("textArea_1");
-const textArea_2 = document.getElementById("textArea_2");
-
+const player1_text = document.getElementById("player1_text");
+const player2_text = document.getElementById("player2_text");
 const restart = document.getElementById("restart");
-
-// const player1 = document.getElementById("player1");
-// const player2 = document.getElementById("player2");
-
-// const rolldice = document.getElementById("rolldice");
 const p1count = document.getElementById("p1_count");
-// const p1roll = document.getElementById("p1_roll");
 const p1score = document.getElementById("p1_score");
 const p2count = document.getElementById("p2_count");
-// const p2roll = document.getElementById("p2_roll");
 const p2score = document.getElementById("p2_score");
 
 // game var
@@ -85,6 +78,7 @@ const p2diceNumber = (min, max) => {
 // roll dice function
 const p1rollDiceFunc = () => {
   p1diceRoll = p1diceNumber(1, 6);
+  p1_diceResult();
   if (p1diceRoll == 1) {
     p1oneRolled();
   } else {
@@ -95,6 +89,7 @@ const p1rollDiceFunc = () => {
 // roll dice function
 const p2rollDiceFunc = () => {
   p2diceRoll = p2diceNumber(1, 6);
+  p2_diceResult();
   if (p2diceRoll == 1) {
     p2oneRolled();
   } else {
@@ -136,4 +131,66 @@ const p2logScore = () => {
       player2_text.textContent = `GAME WON YOU SCORED ${p2gameScore}`;
     }
   }
+};
+
+// dice faces
+// dice face pattern
+const p1_df1 = [p1_d5];
+const p1_df2 = [p1_d1, p1_d9];
+const p1_df3 = [p1_d3, p1_d5, p1_d7];
+const p1_df4 = [p1_d1, p1_d3, p1_d7, p1_d9];
+const p1_df5 = [p1_d1, p1_d3, p1_d5, p1_d7, p1_d9];
+const p1_df6 = [p1_d1, p1_d2, p1_d3, p1_d7, p1_d8, p1_d9];
+
+const p1_diceFaceList = [p1_df1, p1_df2, p1_df3, p1_df4, p1_df5, p1_df6];
+
+const p1_diceResult = () => {
+  p1_resetDice();
+  let searchFor = p1_diceFaceList[p1diceRoll - 1];
+  let dItems = searchFor;
+  for (let i = 0; i < dItems.length; i++) {
+    console.log(dItems[i]);
+    dItems[i].style.backgroundColor = "#fff";
+  }
+};
+
+const p1_resetDice = () => {
+  p1_d1.style.backgroundColor = "#2a5a97";
+  p1_d2.style.backgroundColor = "#2a5a97";
+  p1_d3.style.backgroundColor = "#2a5a97";
+  p1_d5.style.backgroundColor = "#2a5a97";
+  p1_d7.style.backgroundColor = "#2a5a97";
+  p1_d8.style.backgroundColor = "#2a5a97";
+  p1_d9.style.backgroundColor = "#2a5a97";
+};
+
+// dice two
+
+const p2_df1 = [p2_d5];
+const p2_df2 = [p2_d1, p2_d9];
+const p2_df3 = [p2_d3, p2_d5, p2_d7];
+const p2_df4 = [p2_d1, p2_d3, p2_d7, p2_d9];
+const p2_df5 = [p2_d1, p2_d3, p2_d5, p2_d7, p2_d9];
+const p2_df6 = [p2_d1, p2_d2, p2_d3, p2_d7, p2_d8, p2_d9];
+
+const p2_diceFaceList = [p2_df1, p2_df2, p2_df3, p2_df4, p2_df5, p2_df6];
+
+const p2_diceResult = () => {
+  p2_resetDice();
+  let searchFor = p1_diceFaceList[p2diceRoll - 1];
+  let dItems = searchFor;
+  for (let i = 0; i < dItems.length; i++) {
+    console.log(dItems[i]);
+    dItems[i].style.backgroundColor = "#fff";
+  }
+};
+
+const p2_resetDice = () => {
+  p2_d1.style.backgroundColor = "#f49446";
+  p2_d2.style.backgroundColor = "#f49446";
+  p2_d3.style.backgroundColor = "#f49446";
+  p2_d5.style.backgroundColor = "#f49446";
+  p2_d7.style.backgroundColor = "#f49446";
+  p2_d8.style.backgroundColor = "#f49446";
+  p2_d9.style.backgroundColor = "#f49446";
 };
