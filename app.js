@@ -50,7 +50,6 @@ const newGameFunc = () => {
   player1_text.textContent = "-";
   player2_text.textContent = "-";
   player1_text.textContent = `${p1gameScore}`;
-
   player2_text.textContent = `${p2gameScore}`;
 };
 
@@ -177,7 +176,7 @@ const p2_diceFaceList = [p2_df1, p2_df2, p2_df3, p2_df4, p2_df5, p2_df6];
 
 const p2_diceResult = () => {
   p2_resetDice();
-  let searchFor = p1_diceFaceList[p2diceRoll - 1];
+  let searchFor = p2_diceFaceList[p2diceRoll - 1];
   let dItems = searchFor;
   for (let i = 0; i < dItems.length; i++) {
     console.log(dItems[i]);
