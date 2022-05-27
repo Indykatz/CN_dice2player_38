@@ -17,11 +17,11 @@ const p2count = document.getElementById("p2_count");
 const p2score = document.getElementById("p2_score");
 
 // game var
-let p1gameCount = 0;
+// let p1gameCount = 0;
 let p1gameScore = 0;
 let p1diceRoll = 0;
 
-let p2gameCount = 0;
+// let p2gameCount = 0;
 let p2gameScore = 0;
 let p2diceRoll = 0;
 
@@ -47,31 +47,28 @@ const p2_d9 = document.getElementById("p2_d9");
 
 // event listener for new game
 restart.addEventListener("click", () => {
-  textArea_2.textContent = "Let's Play";
   newGameFunc();
 });
 
 // new game function
 const newGameFunc = () => {
-  p1gameCount = 0;
   p1gameScore = 0;
-  p2gameCount = 0;
   p2gameScore = 0;
-  p1count.textContent = p1gameCount;
-  p1score.textContent = p1gameScore;
-  p2count.textContent = p2gameCount;
-  p2score.textContent = p2gameScore;
-  textArea_2.textContent = `${p1gameScore} : ${p2gameScore}`;
+  player1_text.textContent = "-";
+  player2_text.textContent = "-";
+  player1_text.textContent = `${p1gameScore}`;
+
+  player2_text.textContent = `${p2gameScore}`;
 };
 
 p1_d5.addEventListener("click", () => {
-  if (p1gameScore < 21 && p1diceRoll != 1 && p1count.textContent != `-`) {
+  if (p1gameScore < 21 && p1diceRoll != 1 && player1_text.textContent != `-`) {
     p1rollDiceFunc();
   }
 });
 
 p2_d5.addEventListener("click", () => {
-  if (p2gameScore < 21 && p2diceRoll != 1 && p2count.textContent != `-`) {
+  if (p2gameScore < 21 && p2diceRoll != 1 && player2_text.textContent != `-`) {
     p2rollDiceFunc();
   }
 });
@@ -107,42 +104,36 @@ const p2rollDiceFunc = () => {
 
 // oneRolled  function
 const p1oneRolled = () => {
-  textArea_2.textContent = `ROLLED A 1 GAME OVER : ${p2gameScore}`;
+  player1_text.textContent = `ROLLED A 1 GAME OVER`;
 };
 
 // oneRolled  function
 const p2oneRolled = () => {
-  player2.textContent = `${p1gameScore} : ROLLED A 1 GAME OVER`;
+  player2_text.textContent = `ROLLED A 1 GAME OVER`;
 };
 
 // next round function
 const p1logScore = () => {
-  p1gameCount += 1;
-  p1count.textContent = p1gameCount;
-  // p1roll.textContent = p1diceRoll;
   p1gameScore += p1diceRoll;
-  p1score.textContent = p1gameScore;
+  player1_text.textContent = p1gameScore;
   if (p1gameScore > 21) {
-    player1.textContent = `GAME LOST YOU SCORED ${p1gameScore}`;
+    player1_text.textContent = `GAME LOST YOU SCORED ${p1gameScore}`;
   } else {
     if (p1gameScore == 21) {
-      player1.textContent = `GAME WON YOU SCORED ${p1gameScore}`;
+      player1_text.textContent = `GAME WON YOU SCORED ${p1gameScore}`;
     }
   }
 };
 
 // next round function
 const p2logScore = () => {
-  p2gameCount += 1;
-  p2count.textContent = p2gameCount;
-  // p2roll.textContent = p2diceRoll;
   p2gameScore += p2diceRoll;
-  p2score.textContent = p2gameScore;
+  player2_text.textContent = p2gameScore;
   if (p2gameScore > 21) {
-    player2.textContent = `GAME LOST YOU SCORED ${p2gameScore}`;
+    player2_text.textContent = `GAME LOST YOU SCORED ${p2gameScore}`;
   } else {
     if (p2gameScore == 21) {
-      player2.textContent = `GAME WON YOU SCORED ${p2gameScore}`;
+      player2_text.textContent = `GAME WON YOU SCORED ${p2gameScore}`;
     }
   }
 };

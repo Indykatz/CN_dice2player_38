@@ -119,13 +119,22 @@ h4 {
   display: flex;
 }
 
-#textArea_1,
-#textArea_2 {
+#textArea_1 {
   background-color: #2a5a97;
   color: #fff;
   font-size: 18px;
   margin: 0px;
   padding: 0 20px 20px;
+}
+
+.text_content {
+  background-color: #2a5a97;
+  color: #fff;
+  font-size: 18px;
+  margin: 0px;
+  padding: 0 20px 20px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .content {
