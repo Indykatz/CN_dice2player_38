@@ -40,13 +40,15 @@ const p2_d9 = document.getElementById("p2_d9");
 
 // event listener for new game
 restart.addEventListener("click", () => {
+  p1_resetDice();
+  p2_resetDice();
+  p1_d5.style.backgroundColor = "#fff";
+  p2_d5.style.backgroundColor = "#fff";
   newGameFunc();
 });
 
 // new game function
 const newGameFunc = () => {
-  p1_resetDice();
-  p2_resetDice();
   p1gameScore = 0;
   p2gameScore = 0;
   player1_text.textContent = "-";
