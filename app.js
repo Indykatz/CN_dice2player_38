@@ -45,6 +45,8 @@ restart.addEventListener("click", () => {
 
 // new game function
 const newGameFunc = () => {
+  p1_resetDice();
+  p2_resetDice();
   p1gameScore = 0;
   p2gameScore = 0;
   player1_text.textContent = "-";
