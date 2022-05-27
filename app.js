@@ -107,12 +107,12 @@ const p2rollDiceFunc = () => {
 
 // oneRolled  function
 const p1oneRolled = () => {
-  player1.textContent = `ROLLED A 1 GAME OVER`;
+  textArea_2.textContent = `ROLLED A 1 GAME OVER : ${p2gameScore}`;
 };
 
 // oneRolled  function
 const p2oneRolled = () => {
-  player2.textContent = `ROLLED A 1 GAME OVER`;
+  player2.textContent = `${p1gameScore} : ROLLED A 1 GAME OVER`;
 };
 
 // next round function

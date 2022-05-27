@@ -7,7 +7,6 @@ html {
 }
 
 /* found these when inspecting the code - resolved spacing issue
-    
     * will apply to the whole page - Asked Gwyl */
 *,
 ::after,
@@ -168,19 +167,20 @@ h4 {
   width: 100%;
 }
 
-/* mobile and view for screens less than 500px */
-@media only screen and (max-width: 500px) {
-  .headingContent {
-    font-size: 80%;
-  }
-
-  h2 {
-    font-size: 80%;
-  }
-
-  .foot {
-    position: relative;
-  }
+/* colour buttons */
+/* restart */
+#restart {
+  color: #fff;
+  border: 1px solid #2a5a97;
+  border-radius: 15px;
+  background-color: #2a5a97;
+  box-shadow: 0 0 10px #2a5a97;
+}
+#restart:active {
+  color: #2a5a97;
+  background: #f49446;
+  box-shadow: 0 0 10px #f49446, 0 0 40px #f49446, 0 0 80px;
+  transform: translateY(4px);
 }
 
 /* ------ */
@@ -206,6 +206,12 @@ h4 {
   border-radius: 10%;
   margin: 10px auto;
   display: flex;
+}
+
+/* dice */
+.p1_dice:active {
+  box-shadow: 0 0 10px #f49446, 0 0 40px #f49446, 0 0 80px;
+  transform: translateY(4px);
 }
 
 .column {
@@ -239,6 +245,11 @@ h4 {
   display: flex;
 }
 
+.p2_dice:active {
+  box-shadow: 0 0 10px #2a5a97, 0 0 40px #2a5a97, 0 0 80px;
+  transform: translateY(4px);
+}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -257,4 +268,19 @@ h4 {
 
 #p2_d5 {
   background-color: #fff;
+}
+
+/* mobile and view for screens less than 500px */
+@media only screen and (max-width: 500px) {
+  .headingContent {
+    font-size: 80%;
+  }
+
+  h2 {
+    font-size: 80%;
+  }
+
+  .foot {
+    position: relative;
+  }
 }
